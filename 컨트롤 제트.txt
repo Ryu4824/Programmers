@@ -11,11 +11,12 @@ int solution(const char* s) {
     char*  p;
     p = strtok(s," ");
     while(p != NULL){ 
-        num[n]=atoi(p);
-        if(num[n]== 0){
-            answer -= num[n-1];
-       }
-        answer += num[n++];
+        if (*p == 'Z') {
+            answer -= num[n-1];    
+        } else {
+            num[n]=atoi(p);
+            answer += num[n++];
+        }
         p=strtok(NULL, " ");
     } 
 
