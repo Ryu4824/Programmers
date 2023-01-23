@@ -1,0 +1,8 @@
+def solution(n, arr1, arr2):
+    answer = [0] *n
+    
+    for i in range(n):
+        binaryNum = format(arr1[i], 'b')
+        binaryNum.zfill(n)
+        print(binaryNum)
+    return answer
