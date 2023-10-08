@@ -1,0 +1,5 @@
+def solution(s):
+    s_split = s.split()
+    numbers = list(map(int,s_split))
+    answer = " ".join(map(str, (min(numbers), max(numbers))))
+    return answer
