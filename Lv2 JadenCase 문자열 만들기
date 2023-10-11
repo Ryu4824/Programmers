@@ -1,0 +1,8 @@
+def solution(s):
+    answer = ''
+    word=s.split(" ")
+    w_l=[]
+    for i in word:
+        w_l.append(i.capitalize())
+    answer = ' '.join(w_l)
+    return answer
