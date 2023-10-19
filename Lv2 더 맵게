@@ -1,3 +1,4 @@
+'''
 def solution(scoville, K):
     answer = 0
     scoville.sort()
@@ -9,4 +10,24 @@ def solution(scoville, K):
         scoville[0] = num
         answer+=1
         scoville.sort()
+    return answer
+'''
+# 기존의 코드는 효율성 테스트 불합
+# heapq를 활용하여 해결
+import heapq
+
+def solution(scoville, K):
+    answer = 0
+    heapq.heapify(scoville)
+
+    while scoville[0] < K:
+        if len(scoville) < 2:
+            return -1
+        smallest1 = heapq.heappop(scoville)
+        smallest2 = heapq.heappop(scoville)
+        new_scoville = smallest1 + (smallest2 * 2)
+        heapq.heappush(scoville, new_scoville)
+
+        answer += 1
+
     return answer
