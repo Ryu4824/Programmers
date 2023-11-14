@@ -1,7 +1,10 @@
-from collections import Counter
+from collections import Counter #함수를 제외하려면 딕셔너리로 해결하면 될듯
 
 def solution(k, tangerine):
     answer = 0
-    counter = Counter(tangerine)
-    duplicates_list = sorted([x for x in tangerine if counter[x] > 1], key=lambda x: (counter[x], x))
-    return len(set(duplicates_list[:k]))
+    num = 0
+    for i,j in Counter(tangerine).most_common(k):
+        answer += j
+        num += 1
+        if answer >= k:
+            return num
