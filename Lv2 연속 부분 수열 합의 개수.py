@@ -1,6 +1,6 @@
 def solution(elements):
     num_list = []
-    for i in range(len(elements)):
+    for i in range(len(elements)-1):
         end = 1+i
         for start in range(len(elements)):
             if len(elements)<end:
@@ -12,4 +12,4 @@ def solution(elements):
                 num = sum(elements[start:end])
             num_list.append(num)
             end+=1
-    return len(set(num_list[1:]))
+    return len(set(num_list))+1
